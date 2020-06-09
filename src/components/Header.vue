@@ -54,9 +54,10 @@ export default {
 }
 
 .header-inner {
+    width: 950px;
+    padding: 10px 0;
     display: flex;
     align-items: center;
-    padding: 10px 0;
 }
 
 .header p {
