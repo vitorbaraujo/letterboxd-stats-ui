@@ -6,9 +6,23 @@
                 <p class="logo-title">Letterboxd</p>
             </div>
 
-            <div class="profile-dropdown">
-                <p>{{ user.name.toUpperCase() }}</p>
-            </div>
+            <Dropdown
+                userIconUrl="https://gravatar.com/avatar/72c289424e0c1219de83996c0199cd5c"
+                username="vitorbarbosa"
+                v-bind:options="[
+                    { name: 'Home' },
+                    { name: 'Profile' },
+                    { name: 'Diary' },
+                    { name: 'Reviews' },
+                    { name: 'Watchlist' },
+                    { name: 'Lists' },
+                    { name: 'Likes' },
+                    { name: 'Tags' },
+                    { name: 'Networks' },
+                    { name: 'Stats' },
+                    { name: 'Settings' },
+                    { name: 'Sign Out' },
+                ]" />
 
             <div class="header-buttons">
                 <p v-for="(button, index) in buttons" v-bind:key="index" class="header-btn">
@@ -28,8 +42,13 @@
 </template>
 
 <script>
+import Dropdown from './Dropdown.vue'
+
 export default {
     name: 'Header',
+    components: {
+        Dropdown
+    },
     data: function() {
         return {
             buttons: [
