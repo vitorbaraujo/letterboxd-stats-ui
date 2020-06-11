@@ -1,5 +1,7 @@
 # letterboxd-stats
 
+This project replicates the UI for the [Letterboxd all-time stats user page](https://letterboxd.com/moulton/stats/).
+
 ## Project setup
 ```
 npm install
