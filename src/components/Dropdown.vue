@@ -5,10 +5,10 @@
         @mouseleave="onHover(false)">
         <div class="dropdown-btn" :class="{ 'hover': hover }">
             <div class="icon">
-                <img class="icon-img" :src="userIconUrl" />
+                <img class="icon-img" :src="gravatarUrl(user.gravatarUrl)" />
             </div>
             <div class="username">
-                <p>{{username.toUpperCase()}}</p>
+                <p>{{user.name.toUpperCase()}}</p>
             </div>
             <div class="arrow">
                 <p><font-awesome-icon :icon="arrowIcon" /></p>
@@ -30,8 +30,7 @@ import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
 export default {
     name: 'Dropdown',
     props: {
-        userIconUrl: String,
-        username: String,
+        user: Object,
         options: Array,
     },
     data: function() {
@@ -44,6 +43,9 @@ export default {
         onHover: function(isHovering) {
             this.hover = isHovering
             this.arrowIcon = isHovering ? faAngleUp : faAngleDown
+        },
+        gravatarUrl(userHash) {
+            return `https://gravatar.com/avatar/${userHash}`
         }
     }
 }

@@ -7,22 +7,8 @@
             </div>
 
             <Dropdown
-                userIconUrl="https://gravatar.com/avatar/72c289424e0c1219de83996c0199cd5c"
-                username="vitorbarbosa"
-                v-bind:options="[
-                    { name: 'Home' },
-                    { name: 'Profile' },
-                    { name: 'Diary' },
-                    { name: 'Reviews' },
-                    { name: 'Watchlist' },
-                    { name: 'Lists' },
-                    { name: 'Likes' },
-                    { name: 'Tags' },
-                    { name: 'Networks' },
-                    { name: 'Stats' },
-                    { name: 'Settings' },
-                    { name: 'Sign Out' },
-                ]" />
+                :user="user"
+                :options="profileDropdownOptions" />
 
             <div class="header-buttons">
                 <p v-for="(button, index) in buttons" v-bind:key="index" class="header-btn">
@@ -59,8 +45,23 @@ export default {
                 { name: 'People' },
             ],
             user: {
-                name: 'vitorbarbosa'
+                name: 'vitorbarbosa',
+                gravatarUrl: '72c289424e0c1219de83996c0199cd5c'
             },
+            profileDropdownOptions: [
+                { name: 'Home', customClass: 'top-border' },
+                { name: 'Profile' },
+                { name: 'Diary' },
+                { name: 'Reviews' },
+                { name: 'Watchlist' },
+                { name: 'Lists' },
+                { name: 'Likes' },
+                { name: 'Tags' },
+                { name: 'Networks' },
+                { name: 'Stats' },
+                { name: 'Settings', customClass: 'top-border' },
+                { name: 'Sign Out' }
+            ],
             searchIcon: faSearch
         }
     }
