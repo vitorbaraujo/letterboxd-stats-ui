@@ -1,8 +1,8 @@
 <template>
     <div
         id="dropdown"
-        @mouseover="hover = true"
-        @mouseleave="hover = false">
+        @mouseover="onHover(true)"
+        @mouseleave="onHover(false)">
         <div class="dropdown-btn" :class="{ 'hover': hover }">
             <div class="icon">
                 <img class="icon-img" :src="userIconUrl" />
@@ -11,7 +11,7 @@
                 <p>{{username.toUpperCase()}}</p>
             </div>
             <div class="arrow">
-                arrow
+                <p><font-awesome-icon :icon="arrowIcon" /></p>
             </div>
         </div>
         <div class="dropdown-options" v-show="hover">
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons'
+
 export default {
     name: 'Dropdown',
     props: {
@@ -34,7 +36,14 @@ export default {
     },
     data: function() {
         return {
-            hover: false
+            hover: false,
+            arrowIcon: faAngleDown
+        }
+    },
+    methods: {
+        onHover: function(isHovering) {
+            this.hover = isHovering
+            this.arrowIcon = isHovering ? faAngleUp : faAngleDown
         }
     }
 }
@@ -70,9 +79,14 @@ export default {
 
 .dropdown-btn > .username {
     padding: 0 5px;
+    font-size: 14px;
 }
 
 .dropdown-btn.hover > .username > p {
+    color: #f5f6f7;
+}
+
+.dropdown-btn.hover > .arrow > p {
     color: #f5f6f7;
 }
 

@@ -31,7 +31,7 @@
             </div>
 
             <div class="header-search">
-                <p>Search</p>
+                <p><font-awesome-icon :icon="searchIcon" /></p>
             </div>
 
             <div class="header-log-btn">
@@ -43,6 +43,7 @@
 
 <script>
 import Dropdown from './Dropdown.vue'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export default {
     name: 'Header',
@@ -59,7 +60,8 @@ export default {
             ],
             user: {
                 name: 'vitorbarbosa'
-            }
+            },
+            searchIcon: faSearch
         }
     }
 }
