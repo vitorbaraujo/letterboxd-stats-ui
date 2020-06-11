@@ -17,7 +17,7 @@
         <div class="dropdown-options" v-show="hover">
             <p v-for="(option, index) in options"
                 :key="index"
-                class="header-btn">
+                :class="['header-btn', option.customClass]">
                 {{ option.name }}
             </p>
         </div>
@@ -60,7 +60,9 @@ export default {
 #dropdown > .dropdown-btn {
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 5px 10px;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
 }
 
 #dropdown > .dropdown-btn.hover {
@@ -69,6 +71,7 @@ export default {
 
 .dropdown-btn > .icon {
     display: flex;
+    padding-right: 2px;
     height: 24px;
     width: 24px;
 }
@@ -82,10 +85,19 @@ export default {
 .dropdown-btn > .username {
     padding: 0 5px;
     font-size: 14px;
+    font-weight: 800;
+}
+
+.dropdown-btn > .username > p {
+    margin: 0px;
 }
 
 .dropdown-btn.hover > .username > p {
     color: #f5f6f7;
+}
+
+.dropdown-btn > .arrow > p {
+    margin: 0px;
 }
 
 .dropdown-btn.hover > .arrow > p {
@@ -97,6 +109,8 @@ export default {
     width: 100%;
     padding: 10px 0;
     background: #8b99a9;
+    border-bottom-left-radius: 1%;
+    border-bottom-right-radius: 1%;
 }
 
 .dropdown-options > p {
@@ -110,6 +124,10 @@ export default {
 .dropdown-options > p:hover {
     background: #697787;
     color: #f5f6f7;
+}
+
+.dropdown-options > .top-border {
+    border-top: 1px solid #7e8b99;
 }
 
 </style>
