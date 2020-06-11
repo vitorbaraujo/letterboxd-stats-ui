@@ -34,21 +34,21 @@
                 <p><font-awesome-icon :icon="searchIcon" /></p>
             </div>
 
-            <div class="header-log-btn">
-                <p>LOG</p>
-            </div>
+            <LogButton />
         </div>
     </header>
 </template>
 
 <script>
 import Dropdown from './Dropdown.vue'
+import LogButton from './LogButton.vue'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 export default {
     name: 'Header',
     components: {
-        Dropdown
+        Dropdown,
+        LogButton
     },
     data: function() {
         return {
