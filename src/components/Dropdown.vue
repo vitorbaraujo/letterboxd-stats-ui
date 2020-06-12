@@ -107,7 +107,7 @@ export default {
 #dropdown > .dropdown-options {
     position: absolute;
     width: 100%;
-    padding: 10px 0;
+    padding-bottom: 10px;
     background: #8b99a9;
     border-bottom-left-radius: 1%;
     border-bottom-right-radius: 1%;
