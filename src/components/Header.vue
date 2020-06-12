@@ -36,6 +36,9 @@ export default {
         Dropdown,
         LogButton
     },
+    props: {
+        user: Object
+    },
     data: function() {
         return {
             buttons: [
@@ -44,10 +47,6 @@ export default {
                 { name: 'Lists' },
                 { name: 'People' },
             ],
-            user: {
-                name: 'vitorbarbosa',
-                gravatarUrl: '72c289424e0c1219de83996c0199cd5c'
-            },
             profileDropdownOptions: [
                 { name: 'Home', customClass: 'top-border' },
                 { name: 'Profile' },

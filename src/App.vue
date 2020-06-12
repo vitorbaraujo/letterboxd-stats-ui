@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :user="user" />
     <MainStats :user="user" />
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
