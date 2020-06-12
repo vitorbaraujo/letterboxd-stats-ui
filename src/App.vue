@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <MainStats :user="user" />
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -9,12 +10,22 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
+import MainStats from './components/MainStats.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    Header
+    Header,
+    MainStats
+  },
+  data: function() {
+    return {
+      user: {
+        name: 'vitorbarbosa',
+        gravatarUrl: '72c289424e0c1219de83996c0199cd5c'
+      },
+    }
   }
 }
 </script>
@@ -22,6 +33,7 @@ export default {
 <style>
 body {
   margin: 0px;
+  background: #161b21;
 }
 
 #app {
