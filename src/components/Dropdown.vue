@@ -4,10 +4,10 @@
         @mouseover="onHover(true)"
         @mouseleave="onHover(false)">
         <div class="dropdown-btn" :class="{ 'hover': hover }">
-            <div class="icon">
+            <div class="icon" v-if="user">
                 <img class="icon-img" :src="gravatarUrl(user.gravatarUrl)" />
             </div>
-            <div class="username">
+            <div class="username" v-if="user">
                 <p>{{user.name.toUpperCase()}}</p>
             </div>
             <div class="arrow">
@@ -106,7 +106,9 @@ export default {
 
 #dropdown > .dropdown-options {
     position: absolute;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
     padding-bottom: 10px;
     background: #8b99a9;
     border-bottom-left-radius: 1%;
